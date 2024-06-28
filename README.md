@@ -16,27 +16,22 @@ Manage application parameters using AWS SSM Parameter store.
 
 ## Requirements
 
-<!--
-    Provide information about minimum requirements needed for project to be runnable.
-
-    Note:
-    This section is optional and it can be removed if not needed.
-    Keep in mind to remove the section from the Table of contents as well.
--->
+Make sure you have configured AWS CLI credentials and have permissions to access AWS SSM Parameter Store.
 
 ## Getting started
 
-<!-- 
-    Explain how to install the project, including any dependencies that need to be installed.
-    Provide clear and concise instructions that can be easily followed.
--->
+Run the setup script `bin/setup`.
 
 ## Usage
 
-<!--
-    Explain how to use the project, including any relevant code snippets or examples.
-    Provide detailed documentation that explains how to use the project effectively.
--->
+```bash
+AWS_REGION=<aws-region> AWS_PROFILE=<aws-profile> \
+  ruby -Ilib exe/aws_param_store \
+  --path /acme/project-x/dev/ \
+  --skip-nulls \
+  --output .env \
+  --force
+```
 
 ## Development
 
