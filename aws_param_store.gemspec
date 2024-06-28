@@ -1,39 +1,30 @@
 # frozen_string_literal: true
 
-require_relative "lib/aws_param_store/version"
+require_relative 'lib/aws_param_store/version'
 
 Gem::Specification.new do |spec|
-  spec.name = "aws_param_store"
+  spec.name = 'aws_param_store'
   spec.version = AwsParamStore::VERSION
-  spec.authors = ["Vedran Hrncic"]
-  spec.email = ["vedran.hrncic@gmail.com"]
+  spec.authors = ['Rails team']
+  spec.email = ['team.rails@infinum.com']
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.summary = 'Manage app parameters using AWS SSM Parameter store'
+  spec.description = spec.summary
+  spec.homepage = 'https://github.com/infinum/aws_param_store'
+  spec.license = 'MIT'
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.required_ruby_version = '>= 3.1.0'
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
       (File.expand_path(f) == __FILE__) ||
-        f.start_with?(*%w[bin/ test/ spec/ features/ .git .github appveyor Gemfile])
+        f.start_with?('bin/', 'spec/', '.git', '.github', 'Gemfile')
     end
   end
-  spec.bindir = "exe"
+  spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.require_paths = ['lib']
 end
